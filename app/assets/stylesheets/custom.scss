@@ -27,6 +27,7 @@ $brand-danger:  #B85C5C;
 
 // Set the navbar's logo to the conduit logo font & large size
 .navbar-brand {
+    float: left;
     font-family: $font-family-logo;
     font-size:1.5rem !important;
     padding-top:0rem !important;
@@ -41,7 +42,8 @@ $brand-danger:  #B85C5C;
 $navbar-padding-x: 0rem !important;
 
 // create style for nav-link pills that do an outline instead of block
-.nav-pills.outline-active {
+.nav-item {
+    float: right;
     .nav-link {
         border-radius:0px;
         border:none;
@@ -52,11 +54,11 @@ $navbar-padding-x: 0rem !important;
             color:#555;
         }
 
-        &.active {
-            background: #fff !important;
-            border-bottom:2px solid $brand-primary !important;
-            color: $brand-primary !important;
-        }
+        // &.active {
+        //     background: #fff !important;
+        //     border-bottom:2px solid $brand-primary !important;
+        //     color: $brand-primary !important;
+        // }
     }
 }
 
