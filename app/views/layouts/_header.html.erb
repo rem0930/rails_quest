@@ -12,11 +12,13 @@
     <div class="container">
         <%= link_to 'conduit', root_path, class: 'navbar-brand' %>
         <ul class="nav navbar-nav pull-xs-right">
+        
         <li class="nav-item">
-            <a class="nav-link" href="editor.html">
-            <i class="ion-compose"></i>&nbsp;New Post
-            </a>
+            <%= link_to new_article_path, class: "nav-link" do %>
+                <i class="ion-compose"></i>&nbsp;New Post
+            <% end %>
         </li>
+        
         <li class="nav-item">
             <a class="nav-link" href="auth.html">Sign up</a>
         </li>
