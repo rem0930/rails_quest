@@ -1,22 +1,41 @@
 <div class="article-page">
     <div class="banner">
         <div class="container">
-        <h1><%= @article.title.html_safe %></h1>
+            <h1><%= @article.title.html_safe %></h1>
+
+            <div class="post-meta">
+                <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
+                <div class="info">
+                    <a href="profile.html" class="author">Eric Simons</a>
+                    <span class="date">January 20th</span>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary">
+                    <i class="ion-plus-round"></i>
+                    &nbsp;
+                    Follow Eric Simons <span class="counter">(10)</span>
+                </button>
+                &nbsp;&nbsp;
+                <button class="btn btn-sm btn-outline-primary">
+                    <i class="ion-heart"></i>
+                    &nbsp;
+                    Favorite Post <span class="counter">(29)</span>
+                </button>
+            </div>
+
         </div>
     </div>
+    
     <div class="container page">
-        <div class="row">
-        <div class="col-xs-12 col-md-8 offset-md-2">
-            <form class="card comment-form">
-            <div class="card-block">
-                <textarea class="form-control" placeholder="Write a comment..." rows="3"><%= @article.content.html_safe %></textarea>
+    
+        <div class="row post-content">
+            <div class="col-xs-12 col-md-8 offset-md-2">
+                <form class="card comment-form">
+                    <div class="card-block">
+                        <textarea class="form-control" placeholder="Write a comment..." rows="3"><%= @article.content.html_safe %></textarea>
+                    </div>
+                </form>
             </div>
-            <div class="card-footer">
-                <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-                <button class="btn btn-sm btn-primary">Post Comment</button>
-            </div>
-            </form>
         </div>
-        </div>
+        
     </div>
 </div>

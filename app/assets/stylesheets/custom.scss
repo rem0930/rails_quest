@@ -115,7 +115,7 @@ footer {
 }
 
 // Generic author information/date container
-.post-meta {
+.article-meta {
     display:block;
     position:relative;
     font-weight: 300;
@@ -148,11 +148,11 @@ footer {
 }
 
 // Preview links inside post previews
-.post-preview {
+.article-preview {
     border-top:1px solid rgba(0,0,0,.1);
     padding:1.5rem 0;
 
-    .post-meta {
+    .article-meta {
         margin:0 0 1rem 0;
     }
     .preview-link {
@@ -218,7 +218,7 @@ footer {
 
 }
 
-.post-page {
+.article-page {
 
     .banner {
         padding:3rem 0 2rem 0;
@@ -239,7 +239,7 @@ footer {
         }
     
         // Post page style overrides for metadata
-        .post-meta {
+        .article-meta {
             margin:2rem 0 0 0;
     
             .author {
@@ -250,7 +250,7 @@ footer {
     }
     
     // General styles for post content
-    .post-content {
+    .article-content {
         p {
             font-family: 'Source Serif Pro', serif;
             font-size: 1.2rem;
@@ -266,11 +266,11 @@ footer {
     }
     
     
-    .post-actions {
+    .article-actions {
         text-align: center;
         margin:1.5rem 0 3rem 0;
     
-        .post-meta .info {
+        .article-meta .info {
             text-align: left;
         }
     }
