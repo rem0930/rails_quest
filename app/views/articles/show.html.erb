@@ -3,39 +3,41 @@
         <div class="container">
             <h1><%= @article.title.html_safe %></h1>
 
-            <div class="post-meta">
-                <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
+            <div class="article-meta">
+                <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
                 <div class="info">
-                    <a href="profile.html" class="author">Eric Simons</a>
+                    <a href="/profile/eric-simons" class="author">Eric Simons</a>
                     <span class="date">January 20th</span>
                 </div>
                 <button class="btn btn-sm btn-outline-secondary">
                     <i class="ion-plus-round"></i>
-                    &nbsp;
-                    Follow Eric Simons <span class="counter">(10)</span>
+                    &nbsp; Follow Eric Simons <span class="counter">(10)</span>
                 </button>
                 &nbsp;&nbsp;
                 <button class="btn btn-sm btn-outline-primary">
                     <i class="ion-heart"></i>
-                    &nbsp;
-                    Favorite Post <span class="counter">(29)</span>
+                    &nbsp; Favorite Post <span class="counter">(29)</span>
+                </button>
+                <button class="btn btn-sm btn-outline-secondary">
+                    <%= link_to "Edit Article", edit_article_path(@article), class: "ion-edit" %>
+                </button>
+                <button class="btn btn-sm btn-outline-danger">
+                    <i class="ion-trash-a"></i> Delete Article
                 </button>
             </div>
-
         </div>
     </div>
     
     <div class="container page">
-    
-        <div class="row post-content">
-            <div class="col-xs-12 col-md-8 offset-md-2">
+        <div class="row article-content">
+            <div class="col-md-12">
                 <form class="card comment-form">
                     <div class="card-block">
-                        <textarea class="form-control" placeholder="Write a comment..." rows="3"><%= @article.content.html_safe %></textarea>
+                        <h2 id="introducing-ionic"><%= @article.description.html_safe %></h2>
+                        <p class="form-control" placeholder="Write a comment..." rows="3"><%= @article.content.html_safe %></p>
                     </div>
                 </form>
             </div>
         </div>
-        
     </div>
 </div>
