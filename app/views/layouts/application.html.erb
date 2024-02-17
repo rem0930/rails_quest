@@ -16,10 +16,14 @@
     />
     <!-- Import the custom Bootstrap 4 theme from our hosted CDN -->
     <link rel="stylesheet" href="//demo.productionready.io/main.css" />
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

@@ -1,21 +1,26 @@
 <nav class="navbar navbar-light">
     <div class="container">
         <a class="navbar-brand" href="/">conduit</a>
-        <ul class="nav navbar-nav pull-xs-right">
-            <li class="nav-item">
-                <a class="nav-link" href="/articles/new">
-                    <i class="ion-compose"></i>&nbsp;New Post
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="auth.html">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="settings.html">Settings</a>
-            </li>
-    <!--           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-            </li> -->
-        </ul>
+        <% if logged_in? %>
+            <ul class="nav navbar-nav pull-xs-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="/articles/new">
+                        <i class="ion-compose"></i>&nbsp;New Post
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">Log out</a>
+                    <%= form_with(url: logout_path, method: :delete, id: "logout-form", style: "display: none;") do %>
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <% end %>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="settings.html">Settings</a>
+                </li>
+            </ul>
+        <% else %>
+            <li class="nav-item"><%= link_to "Log_in", login_path %></li>
+            <li class="nav-item"><%= link_to "Sign up", signup_path%></li>
+        <% end %>
     </div>
 </nav>
