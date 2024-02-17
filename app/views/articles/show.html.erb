@@ -6,8 +6,8 @@
             <div class="article-meta">
                 <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
                 <div class="info">
-                    <a href="/profile/eric-simons" class="author">Eric Simons</a>
-                    <span class="date">January 20th</span>
+                    <a href="/profile/eric-simons" class="author"><%= current_user.name %></a>
+                    <span class="date"><%= @article.created_at %></span>
                 </div>
                 <button class="btn btn-sm btn-outline-secondary">
                     <i class="ion-plus-round"></i>
