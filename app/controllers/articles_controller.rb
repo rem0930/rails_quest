@@ -1,8 +1,16 @@
 class ArticlesController < ApplicationController
+  # POST /articles
+  # POST /articles.json
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+
+  def index
+    @articles = Article.all
+    render json: { articles: @articles }
+  end
+
   def show
-    @article = Article.find(params[:id])
+    render json: { article: @article }
   end
 
   def new
@@ -12,9 +20,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to root_path, notice: "成功！"
+      render json: { article: @article }, status: :created
     else
-      render :new
+      render json: { errors: @article.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -24,16 +32,15 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to root_path, notice: "Success!"
+      render json: { article: @article }, status: :ok
     else
-      render :edit
+      render json: { errors: @article.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
-    redirect_to root_path
+    head :no_content
   end
 
   private
@@ -43,6 +50,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :description, :content, :tag_list)
+      params.require(:article).permit(:title, :content, :description)
     end
 end

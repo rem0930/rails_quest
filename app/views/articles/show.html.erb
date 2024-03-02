@@ -1,7 +1,7 @@
 <div class="article-page">
     <div class="banner">
         <div class="container">
-            <h1><%= @article.title.html_safe %></h1>
+            <h1><%= @article.title %></h1>
 
             <div class="article-meta">
                 <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
@@ -27,14 +27,14 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container page">
         <div class="row article-content">
             <div class="col-md-12">
                 <form class="card comment-form">
                     <div class="card-block">
-                        <h2 id="introducing-ionic"><%= @article.description.html_safe %></h2>
-                        <p class="form-control" placeholder="Write a comment..." rows="3"><%= @article.content.html_safe %></p>
+                        <h2 id="introducing-ionic"><%= @article.description %></h2>
+                        <p class="form-control" placeholder="Write a comment..." rows="3"><%= @article.content %></p>
                     </div>
                 </form>
             </div>
